@@ -1,8 +1,8 @@
 create table "Users"
 (
-    id        integer,
-    name      text,
-    birthdate date
+    id        integer NOT NULL PRIMARY KEY CHECK ( id > 0 ),
+    name      text    NOT NULL,
+    birthdate date CHECK ( birthdate > '0000-00-00' )
 );
 
 insert into "Users" (id, name, birthdate)
