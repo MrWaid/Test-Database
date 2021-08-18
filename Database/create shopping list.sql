@@ -1,10 +1,10 @@
 create table "Shopping_list"
 (
-    id      integer,
-    shop_id integer,
-    user_id integer,
-    amount  integer,
-    data    date
+    id      integer NOT NULL PRIMARY KEY CHECK ( id > 0 ),
+    shop_id integer NOT NULL CHECK ( shop_id > 0 ),
+    user_id integer NOT NULL CHECK ( user_id > 0 ),
+    amount  integer NOT NULL CHECK ( amount> 0 ),
+    data    date CHECK ( data > '0000-00-00' )
 );
 
 insert into "Shopping_list" (id, shop_id, user_id, amount, data)
